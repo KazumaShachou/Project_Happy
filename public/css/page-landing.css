@@ -9,33 +9,13 @@
 
 #container {
   margin: auto;
-  width: 90%;
+  width: min(90%, 112rem);
 }
 
 .location,
 h1,
 .visit p {
   height: 16vh;
-}
-
-.visit a {
-  width: 8rem;
-  height: rem;
-  background: #ffd666;
-
-  border: none;
-  border-radius: 3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
-  transition: background 200ms;
-}
-
-.visit a:hover {
-  background: #96feff;
 }
 
 #logo {
@@ -48,12 +28,76 @@ h1,
 
 main h1 {
   animation-delay: 150ms;
-}
-
-.visit p {
-  animation-delay: 200ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);
 }
 
 .visit a {
+  width: 7rem;
+  height: 3rem;
+  background: #ffd666;
+
+  border: none;
+  border-radius: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 200ms;
   animation-delay: 250ms;
+}
+
+.visit a:hover {
+  background: #96feff;
+}
+
+@media (min-width: 760px) {
+  #container {
+    /*shorhand background: image repeat position/size */
+    padding: 5.8rem 2rem;
+    background: url("../images/bg.svg ") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
+    background-position: botton center;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .location,
+  h1,
+  .visit p {
+    height: initial;
+    text-align: initial;
+  }
+  .location {
+    text-align: right;
+    line-height: 1.5;
+    font-size: 2.4rem;
+  }
+  main h1 {
+    font-weight: bold;
+    line-height: 0.88;
+
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+    width: min(300px, 80%);
+  }
+  .visit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial;
+  }
 }
