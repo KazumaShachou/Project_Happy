@@ -43,7 +43,7 @@ a.create-orphanage {
     bottom: 4rem;
     width: 6.4rem;
     height: 6.4rem;
-    background: #15C3D6;
+    background: #92ddf7;
     border: 0;
     border-radius: 2rem;
 
@@ -55,5 +55,5 @@ a.create-orphanage {
 }
 
 a.create-orphanage:hover{
-    background: #17D6EB;
+    background: #92ddf7;
 }
