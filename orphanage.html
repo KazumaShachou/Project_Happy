@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Localize um orfanato |Happy</title>
+    <title>Pekoland |Happy</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="./public/css/main.css" />
     <link rel="stylesheet" href="./public/css/animations.css" />
-    <link rel="stylesheet" href="./public/css/page-orphanages.css" />
+    <link rel="stylesheet" href="./public/css/page-orphanage.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -27,31 +27,77 @@
     />
   </head>
   <body>
-    <div id="page-orphanages">
+    <div id="page-orphanage">
       <aside class="animate-right">
-        <header>
-          <img src="./public/images/map-marker.svg" alt="Happy" />
-
-          <h2>Escolha um orfanato no mapa</h2>
-
-          <p>Muitas crianças estão esperando sua visita :)</p>
-        </header>
-
-        <footer>
-          <strong>Pekoland</strong>
-          <p>Pekora</p>
-        </footer>
-        
+   
       </aside>
-      <div id="mapid" class="animate-appear"></div>
+      <main>
+        <div class="orphanage-details">
+          <img src="./public/images/home.jpg" alt="Lar das crianças">
 
-        <a  href="https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ"
-        title="Usada Pekora"
-        href="create-orphanage.html"class="create-orphanage" title="Cadastre um orfanato" >
-          <img src="./public/images/plus.svg" alt="Criar orfanato" >
-        </a>
+            <!--sequence of images-->
+          <div class="images"> 
+            <button class="active" type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+
+            <button type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+
+            <button type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+
+            <button type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+
+            <button type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+
+            <button type="button">
+              <img src="./public/images/home.jpg" alt="Lar das crianças">
+            </button>
+          </div>
+          <div class="orphanages-details-content">
+
+            <h1>Lar das crianças</h1>
+
+            <p>
+              Prestar assistência para crianças de 06 a 15 anos que se encontrem em situação de risco ou vulnerabilidade social
+            </p>
+
+            <div class="map-container">
+              <div id="mapid"></div>
+              <footer>
+                <a href="Ver rotas no Google Maps"></a>
+              </footer>
+            </div>
+
+            <hr>
+
+            <h2>Instruções para visita</h2>
+
+            <p>Venha se sentir a vontade e traga muito amor e paciência para o lar</p>
+
+            <div class="open-details">
+              <div class="hour">
+                <img src="./public/images/clock.svg" alt="Horarios">
+                Horario de visitas : Das 08h até 18h
+              </div>
+              <div class="open-on-weekends">
+                <img src="./public/images/info.svg" alt="informações">
+                Atendemos fim de semana
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
     </div>
-    <script src="./public/scripts/page-orphanages.js"></script>
-
+    <script src="./public/scripts/page-orphanage.js"></script>
   </body>
 </html>
