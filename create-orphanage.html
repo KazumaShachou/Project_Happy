@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./public/css/animations.css" />
     <link rel="stylesheet" href="./public/css/sidebar.css" />
     <link rel="stylesheet" href="./public/css/map.css" />
+    <link rel="stylesheet" href="./public/css/forms.css" />
     <link rel="stylesheet" href="./public/css/page-create-orphanage.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -60,8 +61,18 @@
             </div>
 
             <div class="input-block">
-              <label for="name ">Nome</label>
+              <label for="name">Nome</label>
+              <textarea id = "about" name="about"></textarea>
+            </div>
+
+            <div class="input-block">
+              <label for="about">Sobre <span>Máximo de 300 caracteres</span></label>
               <input id = "name" name="name">
+            </div>
+
+            <div class="input-block">
+              <label for="whatsapp ">Número do Whatsapp</label>
+              <input id = "whatsapp" name="whatsapp">
             </div>
 
           </fieldset>
