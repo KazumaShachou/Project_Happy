@@ -28,7 +28,6 @@ map.on("click", (event) => {
 });
 
 function addPhotoField() {
-
   //pegar container de fotos
   const container = document.querySelector("#images");
 
@@ -48,19 +47,19 @@ function addPhotoField() {
 
   //limpar o campo antes de adicionar ao container de images
   input.value = "";
-  
+
   //adicionar o clone ao container de #images
   container.appendChild(newFieldContainer);
 }
 
 function deleteField(event) {
-  const span = event.currentTarget  
+  const span = event.currentTarget;
 
   const fieldsContainer = document.querySelectorAll(".new-upload");
-  if(fieldsContainer.length <= 1) {
+  if (fieldsContainer.length <= 1) {
     //limpar o campo
-    span.parentNode.children[0].value = ""
-    return
+    span.parentNode.children[0].value = "";
+    return;
   }
 
   //deletar o campo
@@ -68,19 +67,18 @@ function deleteField(event) {
 }
 
 //sim e não botoes
-function toggleSelect (event) {
+function toggleSelect(event) {
   //retirar a class .active dos botoes
-  document.querySelectorAll('.button-select button')
-  .forEach(function (button) {
-    button.classList.remove('active')
+  document.querySelectorAll(".button-select button").forEach(function (button) {
+    button.classList.remove("active");
   });
 
   //colocar a classe active no botão
-  const button = event.currentTarget
-  button.classList.add('active')
+  const button = event.currentTarget;
+  button.classList.add("active");
 
   //atualizar meu input hidden com o valor selecionado
-  const input = document.querySelector('[name ="open_on_weekends"]')
+  const input = document.querySelector('[name ="open_on_weekends"]');
 
-  input.value = button.dataset.value
+  input.value = button.dataset.value;
 }
