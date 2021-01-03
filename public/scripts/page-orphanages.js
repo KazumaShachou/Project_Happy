@@ -12,16 +12,32 @@ const icon = L.icon({
     popupAnchor : [170, 2]
 })
 
-//create popup overlay
-const popup = L.popup({
-    closeButton : false,
-    className : 'map-popup',
-    minWidht : 240,
-    minHeight: 240
-}).setContent('Peko-chan no IE <a href="orphanage?id=1" class= "choose-orphanage"> <img src = "/images/arrow-white.svg"> </a>')
+//desestruturação
+function addMarker ({id, name, lat, lng}) {
+    
+    //create popup overlay
+    const popup = L.popup({
+        closeButton : false,
+        className : 'map-popup',
+        minWidht : 240,
+        minHeight: 240
+    }).setContent(`${name} <a href="orphanage?id=${id}"><img src = "/images/arrow-white.svg"> </a>`)
 
-//create add and marker
-L.marker([35.6669392,139.6574953], {icon})
-.addTo(map)
-.bindPopup(popup)
+    //create add and marker 
+    L.marker([lat, lng], {icon})
+    .addTo(map)
+    .bindPopup(popup) 
+}
+
+const orphanagesSpan = document.querySelectorAll('.orphanages span')
+orphanagesSpan.forEach(span =>{
+    const orphanage = {
+        id : span.dataset.id,
+        name: span.dataset.name,
+        lat : span.dataset.lat,
+        lng : span.dataset.lng
+    }
+
+    addMarker(orphanage)
+})
  
