@@ -6,8 +6,12 @@ const options = {
   zoomControl: false,
 };
 
+//centralizar ponto do mapa
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
 // create map
-const map = L.map("mapid", options).setView([35.6669392, 139.6574953], 13);
+const map = L.map("mapid", options).setView([lat, lng], 13);
 
 //create and add title layer
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
@@ -21,7 +25,8 @@ const icon = L.icon({
 });
 
 //create add and marker
-L.marker([35.6669392, 139.6574953], { icon }).addTo(map);
+
+L.marker([lat, lng], { icon }).addTo(map);
 
 
 /*image gallery */
