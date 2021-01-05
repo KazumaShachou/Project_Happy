@@ -1,24 +1,26 @@
-const express = require('express');
+const express = require("express");
 const server = express();
-const path = require('path');
-const pages = require('./pages.js');
- 
+const path = require("path");
+const pages = require("./pages.js");
+
 server
-//utilizando arquivos estáticos  (front end)
-  .use(express.static('public'))
+  //use req body
+  .use(express.urlencoded({ extended: true }))
+  //utilizando arquivos estáticos  (front end)
+  .use(express.static("public"))
 
-  .set('views', path.join(__dirname, "views"))
+  .set("views", path.join(__dirname, "views"))
 
-  .set('view engine', 'hbs')
+  .set("view engine", "hbs")
 
-  .get('/', pages.index)
+  .get("/", pages.index)
 
-  .get('/orphanage', pages.orphanage)
-  
-  .get('/orphanages', pages.orphanages)
-  
-  .get('/create-orphanage', pages.createOrphanage)
+  .get("/orphanage", pages.orphanage)
 
- 
- 
-server.listen(5500)
+  .get("/orphanages", pages.orphanages)
+
+  .get("/create-orphanage", pages.createOrphanage)
+
+  .post("/save-orphanage", pages.saveOrphanage);
+
+server.listen(5500);

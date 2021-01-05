@@ -1,5 +1,5 @@
 function saveOrphanage(db, orphanage) {
-    return db.run(`
+  return db.run(`
     INSERT INTO orphanages (
         lat,
         lng,
@@ -18,11 +18,11 @@ function saveOrphanage(db, orphanage) {
         "${orphanage.whatsapp}",
         "${orphanage.images}",
         "${orphanage.instructions}",
-        "${orphanage. opening_hours}",
+        "${orphanage.opening_hours}",
         "${orphanage.open_on_weekends}"
 
     );
-`)
+`);
 }
 
-module.exports = saveOrphanage
+module.exports = saveOrphanage;
